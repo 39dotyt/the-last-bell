@@ -68,4 +68,13 @@ $(document).ready(function() {
       }, 5000);
     }, (i + 1) * 2000);
   }, 12000);
+  startWebCam();
 });
+
+function startWebCam() {
+  navigator.webkitGetUserMedia({video: true, audio: false},
+      function(localMediaStream) {
+        var video = document.querySelector('video');
+        video.src = window.URL.createObjectURL(localMediaStream);
+      }, function(err) { console.error(err); });
+}
