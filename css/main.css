@@ -1,0 +1,27 @@
+body {
+    background: #000000 url("/img/doctor_who_space_travel_by_davidhoffrichter-d1ewhbq.jpg") no-repeat;
+    background-size: 1600px;
+    font-family: "PT Serif", serif !important;
+    font-size: 36px;
+    text-shadow: 0 0 10px #ffffff;
+}
+#audio {
+    visibility: hidden;
+}
+.photo {
+    border-radius: 10px;
+    border: 10px solid #2b669a;
+}
+.photo-horizontal {
+    width: 500px;
+}
+.photo-vertical {
+    height: 500px;
+}
+#five-years-later p {
+    display: block;
+    white-space: nowrap;
+}
+p.author {
+    font-style: italic;
+}
