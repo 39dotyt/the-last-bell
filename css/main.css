@@ -1,27 +1,69 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,700italic&subset=cyrillic);
 body {
-    background: #000000 url(../img/doctor_who_space_travel_by_davidhoffrichter-d1ewhbq.jpg) no-repeat;
+    background: #000000 url(../img/background.jpg) no-repeat;
     background-size: 1600px;
-    font-family: "PT Serif", serif !important;
-    font-size: 36px;
-    text-shadow: 0 0 10px #ffffff;
+    font-family: 'PT Serif', serif !important;
+    font-size: 56px;
+    text-shadow: 0 0 10px #000000;
+    color: #faf0e6;
+}
+#intro {
+    background: transparent url(../img/tardis.jpg) no-repeat center center;
+    width: 900px;
+    height: 650px;
+}
+p {
+    margin: auto;
+    display: block;
+    width: 550px;
+}
+p.body {
+    padding-top: 270px;
+}
+p.author {
+    font-style: italic;
 }
 #audio {
     visibility: hidden;
 }
-.photo {
-    border-radius: 10px;
-    border: 10px solid #2b669a;
+.photo, .video {
+    padding: 10px;
+    border-radius: 30px;
+    background-color: rgba(250, 240, 230, .3);
+}
+.video {
+    padding: 20px;
+    width: 700px;
+}
+.future, .past {
+    opacity: .25;
 }
 .photo-horizontal {
-    width: 500px;
+    width: 700px;
 }
 .photo-vertical {
-    height: 500px;
+    height: 700px;
 }
-#five-years-later p {
-    display: block;
-    white-space: nowrap;
+#outro {
+    background: transparent url(../img/tardis-door.jpg) no-repeat center center;
+    width: 1200px;
+    height: 750px;
 }
-p.author {
+#outro p {
     font-style: italic;
+    font-size: 36px;
+    padding-left: 700px;
+    padding-right: 200px;
+    width: 410px;
+    line-height: 1.75;
+}
+#outro p span {
+    word-break: break-all;
+}
+#outro p.body {
+    padding-top: 140px;
+}
+#outro a, #outro a:hover, #outro a:visited {
+    text-decoration: none;
+    color: #faf0e6;
 }
