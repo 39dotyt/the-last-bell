@@ -29,6 +29,7 @@ $(document).ready(function() {
     setTimeout(function() {
       audio.tardis.pause();
       audio.doctor.play();
+      $('#intro').hide();
       showPhotosAndVideos(app, function() {
         app.goto('outro', 400);
       });
