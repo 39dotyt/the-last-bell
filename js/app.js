@@ -3,11 +3,11 @@
  * @author 0@39.yt (Yurij Mikhalevich)
  */
 
-var VERTICAL_PHOTOS = [18, 19, 33, 35, 37, 38, 39, 42, 49, 52, 57, 59, 71, 75,
-  82, 84, 86],
+var VERTICAL_PHOTOS = [18, 19, 33, 35, 37, 38, 39, 42, 49, 52, 57, 59, 68, 70,
+  71, 75, 82, 84, 86],
     PHOTOS_COUNT = 92,
     VIDEOS_COUNT = 16,
-    OBJECTS_COUNT_TO_SHOW_AT_ONE_MOMENT = 30,
+    OBJECTS_COUNT_TO_SHOW_AT_ONE_MOMENT = 25,
     VIDEOS_COUNT_TO_SHOW = OBJECTS_COUNT_TO_SHOW_AT_ONE_MOMENT - PHOTOS_COUNT,
     HANDLED_PREFIXES = ['photo', 'video'],
     VIDEO_DURATION = [0, 2000, 2000, 16000, 14000, 4000, 5000, 8000, 5000,
@@ -30,10 +30,10 @@ $(document).ready(function() {
       audio.tardis.pause();
       audio.doctor.play();
       showPhotosAndVideos(app, function() {
-        app.goto('outro', 500);
+        app.goto('outro', 400);
       });
     }, 11000);
-  }, 7000);
+  }, 6000);
 });
 
 
@@ -186,7 +186,7 @@ function goto(app, slideId, duration) {
     } else { // if (slidePrefix === 'video') {
       if (slideIndex >= VIDEOS_COUNT_TO_SHOW) {
         slide.show();
-        setTimeout(function() { $('#' + slideId + ' .video')[0].play() }, 1400);
+        setTimeout(function() { $('#' + slideId + ' .video')[0].play() }, 1200);
         slideToHideIndex = slideIndex - OBJECTS_COUNT_TO_SHOW_AT_ONE_MOMENT;
         if (slideToHideIndex < 0) {
           slideToHideIndex += PHOTOS_COUNT;
@@ -209,16 +209,16 @@ function goto(app, slideId, duration) {
 function showPhotosAndVideos(app, callback) {
   var timeouts;
   for (var photoNumber = 0; photoNumber < PHOTOS_COUNT; ++photoNumber) {
-    setTimeout(getGotoFunction(app, 'photo' + photoNumber, 500),
-        2500 * photoNumber);
+    setTimeout(getGotoFunction(app, 'photo' + photoNumber, 400),
+        2350 * photoNumber);
   }
-  timeouts = 2500 * photoNumber;
-  setTimeout(getGotoFunction(app, 'video0', 500), timeouts);
+  timeouts = 2350 * photoNumber;
+  setTimeout(getGotoFunction(app, 'video0', 400), timeouts);
   for (var videoNumber = 1; videoNumber < VIDEOS_COUNT; ++videoNumber) {
-    setTimeout(getGotoFunction(app, 'video' + videoNumber, 500),
-        timeouts += VIDEO_DURATION[videoNumber] + 1700);
+    setTimeout(getGotoFunction(app, 'video' + videoNumber, 400),
+        timeouts += VIDEO_DURATION[videoNumber] + 1550);
   }
-  setTimeout(callback, timeouts + VIDEO_DURATION[videoNumber] + 1700);
+  setTimeout(callback, timeouts + VIDEO_DURATION[videoNumber] + 1550);
 }
 
 
